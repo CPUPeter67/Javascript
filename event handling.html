@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>A Spooky Story</title>
+        <style>
+            body.dark {
+                color:white;
+                background: black;
+            }
+            button {
+                display: block;
+                margin: 5px;
+            }
+            .textEntry {
+                margin-top: 12px;
+                margin-bottom: 15px;
+            }
+            </style>
+            </head>
+            <body>
+                <h1>The Basement</h1>
+                <p id="story">I wanted to find my friend, and I thought he was hiding in the basement.</p>
+                <button onclick="goDark()">Get in the mood.</button>
+                <div class="textEntry">Type your name here...if you dare. <input type="text" id="name"></div>
+                <button onclick="typeAndScream()">DO NOT CLICK.</button>
+                <button onclick="finishTheStory()">Tell me what happened!</button>
+                <!-- <audio id="audio" src="http://reboot-me.com/ouch.mp3" type="audio/mpeg"></audio -->
+                    <script>
+                        function typeAndScream() {
+                            // Uncomment the commented codes to use the audio
+                            //document.getElementById("audio").play();
+                            var personName = document.getElementById("name").value;
+                            alert("You shouldn't have done that," + personName);
+                        }
+                        function goDark() {
+                            document.body.className = "dark";
+                        }
+                        function finishTheStory() {
+                            document.getElementById("story").innerHTML = "So I carefully searched the dungeon until I found him";
+                        }
+                    </script>
+                </body>
+                </html>
